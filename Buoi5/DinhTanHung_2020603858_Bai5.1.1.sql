@@ -97,3 +97,12 @@ select * from TonKho
 go
 
 drop view TonKho
+go
+delete from Ton
+from Nhap
+where Ton.MaVT = Nhap.MaVT
+      and Ton.MaVT in (select Nhap.MaVT
+						from Nhap
+							inner join Xuat
+								on Nhap.MaVT = Xuat.MaVT
+							where DonGiaX < DonGiaN)
