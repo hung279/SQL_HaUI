@@ -53,11 +53,11 @@ CREATE TABLE NHAP(
 
 
 INSERT INTO TON VALUES
-	(9, 'BUT CHI', 7),
-	(11, 'BUT MAY', 4),
-	(12, 'THUOC KE', 4),
-	(13, 'TAY', 4),
-	(14, 'BUT MAU', 4)
+	(1, 'BUT CHI', 7),
+	(2, 'BUT MAY', 4),
+	(3, 'THUOC KE', 4),
+	(4, 'TAY', 4),
+	(5, 'BUT MAU', 4)
 	
 INSERT INTO NHAP VALUES 
 	(1, 10, 5, 4000, '2/6/2002'),
@@ -65,9 +65,8 @@ INSERT INTO NHAP VALUES
 	(3, 10, 6, 2000, '3/6/2002')
 
 INSERT INTO XUAT VALUES 
-	(1, 10, 5, 4000, '8/8/2002'),
-	(2, 10, 4, 6000, '9/8/2002'),
-	(3, 10, 6, 2000, '4/9/2002')
+	(1, 10, 5, 4000, '8/8/2021'),
+	(2, 10, 4, 6000, '9/12/2001')
 
 
 SELECT * FROM TON

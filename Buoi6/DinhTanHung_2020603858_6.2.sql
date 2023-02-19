@@ -185,7 +185,12 @@ as
 		Inner join SanPham on Nhap.MaSP = SanPham.MaSP
 		Inner join HangSX on SanPham.MaHangSX = HangSX.MaHangSX
 		Inner join PNhap on Nhap.SoHDN=PNhap.SoHDN
-	Where Year(NgayNhap)=2020 And TenHang = 'Samsung'goSELECT * FROM Cau_cgo
+	Where Year(NgayNhap)=2020 And TenHang = 'Samsung'
+
+go
+
+SELECT * FROM Cau_c
+go
 
 --d (1đ). Thống kê tổng tiền đã xuất trong ngày 14/06/2020.
 Create view Cau_d
@@ -194,7 +199,12 @@ as
 	From Xuat
 		Inner join SanPham on Xuat.MaSP = SanPham.MaSP
 		Inner join PXuat on Xuat.SoHDX=PXuat.SoHDX
-	Where NgayXuat = '06/14/2020'goSELECT * FROM Cau_dgo
+	Where NgayXuat = '06/14/2020'
+
+go
+
+SELECT * FROM Cau_d
+go
 --e (1đ). Đưa ra SoHDN, NgayNhap có tiền nhập phải trả cao nhất trong năm 2020.
 Create view Cau_e
 as
@@ -206,14 +216,22 @@ as
 										From Nhap Inner join PNhap
 													on Nhap.SoHDN=PNhap.SoHDN
 										Where Year(NgayNhap)=2020
-									)goSELECT * FROM Cau_ego
+									)
+go
+
+SELECT * FROM Cau_e
+go
 
 --f (1đ). Hãy thống kê xem mỗi hãng sản xuất có bao nhiêu loại sản phẩm
 Create view Cau_f
 as
 	Select HangSX.MaHangSX, TenHang, Count(*) As N'Số lượng sp'
 	From SanPham Inner join HangSX on SanPham.MaHangSX = HangSX.MaHangSX
-	Group by HangSX.MaHangSX, TenHanggoSELECT * FROM Cau_fgo
+	Group by HangSX.MaHangSX, TenHang
+go
+
+SELECT * FROM Cau_f
+go
 --g (1đ). Hãy thống kê xem tổng tiền nhập của mỗi sản phẩm trong năm 2020.
 Create view Cau_g
 as
@@ -221,7 +239,12 @@ as
 	From Xuat
 		Inner join SanPham on Xuat.MaSP = SanPham.MaSP
 		Inner join PXuat on Xuat.SoHDX=PXuat.SoHDX
-	Where NgayXuat = '06/14/2020'goSELECT * FROM Cau_ggo
+	Where NgayXuat = '06/14/2020'
+
+go
+
+SELECT * FROM Cau_g
+go
 --h (1đ). Hãy thống kê các sản phẩm có tổng số lượng xuất năm 2020 là lớn hơn 10.000 sản
 --phẩm của hãng Samsung.
 Create view Cau_d
@@ -230,7 +253,12 @@ as
 	From Xuat
 		Inner join SanPham on Xuat.MaSP = SanPham.MaSP
 		Inner join PXuat on Xuat.SoHDX=PXuat.SoHDX
-	Where NgayXuat = '06/14/2020'goSELECT * FROM Cau_dgo
+	Where NgayXuat = '06/14/2020'
+
+go
+
+SELECT * FROM Cau_d
+go
 --i (1đ). Thống kê số lượng nhân viên Nam của mỗi phòng ban.
 Create view Cau_d
 as
@@ -238,7 +266,12 @@ as
 	From Xuat
 		Inner join SanPham on Xuat.MaSP = SanPham.MaSP
 		Inner join PXuat on Xuat.SoHDX=PXuat.SoHDX
-	Where NgayXuat = '06/14/2020'goSELECT * FROM Cau_dgo
+	Where NgayXuat = '06/14/2020'
+
+go
+
+SELECT * FROM Cau_d
+go
 --j (1đ). Thống kê tổng số lượng nhập của mỗi hãng sản xuất trong năm 2018.
 Create view Cau_d
 as
@@ -246,12 +279,23 @@ as
 	From Xuat
 		Inner join SanPham on Xuat.MaSP = SanPham.MaSP
 		Inner join PXuat on Xuat.SoHDX=PXuat.SoHDX
-	Where NgayXuat = '06/14/2020'goSELECT * FROM Cau_dgo
+	Where NgayXuat = '06/14/2020'
+
+go
+
+SELECT * FROM Cau_d
+go
 --k (1đ). Hãy thống kê xem tổng lượng tiền xuất của mỗi nhân viên trong năm 2018 là bao
---nhiêu.Create view Cau_d
+--nhiêu.
+Create view Cau_d
 as
 	Select Sum(SoLuongX*GiaBan) As N'Tổng tiền xuất'
 	From Xuat
 		Inner join SanPham on Xuat.MaSP = SanPham.MaSP
 		Inner join PXuat on Xuat.SoHDX=PXuat.SoHDX
-	Where NgayXuat = '06/14/2020'goSELECT * FROM Cau_dgo
+	Where NgayXuat = '06/14/2020'
+
+go
+
+SELECT * FROM Cau_d
+go
